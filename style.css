@@ -1,0 +1,30 @@
+h1 {
+    font-size: 100px;
+    font-family: 'Open Sans', sans-serif;
+    color: #66FCF1;
+    text-align: center; /* Center text horizontally */
+    margin-top: 20px;
+}
+
+p {
+    font-size: 20px;
+    font-family: 'Open Sans', sans-serif;
+    color: #C5C6C7;
+    text-align: center; /* Center text horizontally */
+    margin-top: 20px;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background-color: #0B0610;
+}
+
+.center-content {
+    display: flex;
+    flex-direction: column; /* Stack header and paragraph vertically */
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
+    height: 100%; /* Occupy full viewport height */
+}
