@@ -32,12 +32,12 @@ body {
 .social-links {
     display: flex;
     justify-content: center;
-    margin-top: 20px;
+    margin-top: 30px; /* Increased margin for better spacing */
 }
 
 .social-button {
-    margin: 0 10px;
-    font-size: 40px;
+    margin: 0 15px; /* Increased margin for better spacing */
+    font-size: 50px; /* Increased font size for larger icons */
     color: #C5C6C7;
     text-decoration: none;
     transition: color 0.3s ease;
