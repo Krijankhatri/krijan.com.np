@@ -2,7 +2,7 @@ h1 {
     font-size: 100px;
     font-family: 'Open Sans', sans-serif;
     color: #66FCF1;
-    text-align: center; /* Center text horizontally */
+    text-align: center;
     margin-top: 20px;
 }
 
@@ -10,7 +10,7 @@ p {
     font-size: 20px;
     font-family: 'Open Sans', sans-serif;
     color: #C5C6C7;
-    text-align: center; /* Center text horizontally */
+    text-align: center;
     margin-top: 20px;
 }
 
@@ -23,8 +23,26 @@ body {
 
 .center-content {
     display: flex;
-    flex-direction: column; /* Stack header and paragraph vertically */
-    justify-content: center; /* Center content vertically */
-    align-items: center; /* Center content horizontally */
-    height: 100%; /* Occupy full viewport height */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.social-button {
+    margin: 0 10px;
+    font-size: 40px;
+    color: #C5C6C7;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.social-button:hover {
+    color: #66FCF1;
 }
