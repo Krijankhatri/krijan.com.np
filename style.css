@@ -1,24 +1,76 @@
-h1 {
-    font-size: 100px;
-    font-family: 'Open Sans', sans-serif;
-    color: #66FCF1;
-    text-align: center;
-    margin-top: 20px;
-}
+/* CSS for krijan.com.np */
 
-p {
-    font-size: 20px;
-    font-family: 'Open Sans', sans-serif;
-    color: #C5C6C7;
-    text-align: center;
-    margin-top: 20px;
+/* Reset some default browser styles */
+body, h1, p, a {
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+    color: white;
 }
 
 body {
-    margin: 0;
-    padding: 0;
-    height: 100vh;
     background-color: #0B0610;
+    overflow-x: hidden; /* Ensure no horizontal scrolling */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #0B0610; /* Dark background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999; /* Ensure it's on top */
+    transition: opacity 1s ease-out;
+}
+
+#particles-js {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.loading-cube {
+    perspective: 1000px;
+    z-index: 1; /* Ensure the cube is above the particles */
+}
+
+.cube {
+    width: 50px;
+    height: 50px;
+    position: relative;
+    transform-style: preserve-3d;
+    transform: rotateX(45deg) rotateY(45deg);
+    animation: rotate 2s infinite linear;
+}
+
+.face {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background: rgba(102, 252, 241, 0.1);
+    border: 1px solid #66FCF1;
+    box-sizing: border-box;
+    backface-visibility: hidden;
+}
+
+.front { transform: translateZ(25px); }
+.back { transform: rotateY(180deg) translateZ(25px); }
+.left { transform: rotateY(-90deg) translateZ(25px); }
+.right { transform: rotateY(90deg) translateZ(25px); }
+.top { transform: rotateX(90deg) translateZ(25px); }
+.bottom { transform: rotateX(-90deg) translateZ(25px); }
+
+@keyframes rotate {
+    from { transform: rotateX(45deg) rotateY(45deg); }
+    to { transform: rotateX(405deg) rotateY(405deg); }
 }
 
 .center-content {
@@ -26,18 +78,33 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    text-align: center;
     height: 100%;
+    opacity: 0;
+    animation: fadeIn 1s ease-out forwards;
+}
+
+h1 {
+    font-size: 80px;
+    color: #66FCF1;
+    margin-top: 20px;
+}
+
+p {
+    font-size: 18px;
+    color: #C5C6C7;
+    margin-top: 20px;
 }
 
 .social-links {
     display: flex;
     justify-content: center;
-    margin-top: 30px; /* Increased margin for better spacing */
+    margin-top: 30px;
 }
 
 .social-button {
-    margin: 0 15px; /* Increased margin for better spacing */
-    font-size: 50px; /* Increased font size for larger icons */
+    margin: 0 15px;
+    font-size: 30px;
     color: #C5C6C7;
     text-decoration: none;
     transition: color 0.3s ease;
@@ -45,4 +112,23 @@ body {
 
 .social-button:hover {
     color: #66FCF1;
+}
+
+/* Custom cursor styles */
+.cursor {
+    position: fixed;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #66FCF1;
+    pointer-events: none;
+    z-index: 9999;
+    transition: transform 0.2s ease;
+    mix-blend-mode: difference;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
 }
